@@ -188,6 +188,16 @@
 	traitname = "Expert Gunsmithing"
 	remarks = list("Always keep your gun well lubricated...", "Keep your barrel free of grime...", "Perfect fitment is the key to a good firearm...", "Maintain a proper trigger pull length...", "Keep your sights zeroed to proper range...")
 
+/obj/item/book/granter/trait/spirit_singer
+	name = "The Wayfarer's Teachings"
+	desc = "A transcription of the lessons taught by the wayfarer themselves. What is normally passed down generation to generation through oral storytelling has been distilled into a singular tome."
+	icon_state = "wayfare"
+	oneuse = FALSE
+	granted_trait = TRAIT_SPIRIT_SINGER
+	tool_behaviour = TOOL_SPIRITSINGER
+	traitname = "Basic Wayfarer Rites"
+	remarks = list("Always put the tribe before yourself...", "The tribe is bonded by blood and belief...", "Be wary of outsiders...", "Many machine spirits are malicious and should be avoided and destroyed...", "Creations of your own hand are always more reliable...")
+
 /obj/item/book/granter/action/drink_fling
 	granted_action = /datum/action/innate/drink_fling
 	name = "Tapper: This One's For You"

@@ -23,6 +23,8 @@
 #define TOOL_GUNTIER3		"Guns and Bullets: Part 3"
 #define TOOL_GUNTIER4		"Guns and Bullets: Part 4"
 #define TOOL_KNIFE            "knife"
+#define TOOL_SHRINE			"wayfarer shrine"
+#define TOOL_SPIRITSINGER	"Teachings of the Wayfarer"
 
 // If delay between the start and the end of tool operation is less than MIN_TOOL_SOUND_DELAY,
 // tool sound is only played when op is started. If not, it's played twice.

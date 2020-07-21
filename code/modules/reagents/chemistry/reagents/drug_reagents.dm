@@ -587,3 +587,108 @@
 		M.emote(pick("twitch","scream","laugh"))
 	..()
 	return
+
+/////////////////////////
+////Wayfarer Rites///////
+/////////////////////////
+
+/datum/reagent/drug/Fortitude
+	name = "Rite of Fortitude"
+	id = "fortitude"
+	description = "A mixture taken by Wayfarers that is said to fortify one against the effects of stuns."
+	reagent_state = LIQUID
+	color = "#99EEBB"
+	taste_description = "bitter"
+	trippy = FALSE
+
+
+/datum/reagent/drug/fortitude/on_mob_life(mob/living/carbon/M)
+	var/high_message = pick("The wayfarer watches over you!", "The power of the wastes flows through you.")
+	if(prob(5))
+		to_chat(M, "<span class='notice'>[high_message]</span>")
+	M.AdjustStun(-30, 0)
+	M.AdjustKnockdown(-30, 0)
+	M.AdjustUnconscious(-30, 0)
+	M.adjustStaminaLoss(-1.5*REM, 0)
+	..()
+	. = 1
+	if(!M.reagents.has_reagent("vitality") && !M.reagents.has_reagent("pathfind"))
+		M.adjustBruteLoss(-6*REM)
+		M.adjustFireLoss(-6*REM)
+		M.adjustOxyLoss(-2*REM)
+		M.adjustToxLoss(-2*REM, 0)
+		M.AdjustStun(-10, 0)
+		M.AdjustKnockdown(-10, 0)
+		M.adjustStaminaLoss(-4*REM, 0)
+		. = 1
+
+
+/datum/reagent/drug/pathfinding
+	name = "Rite of Pathfinding"
+	id = "pathfinding"
+	description = "A chemical compound that, when inhaled, vastly increases the user's reflexes and slows their perception of time. Carries a risk of addiction and extreme nausea and toxin damage if overdosed."
+	reagent_state = LIQUID
+	color = "#21ADA8"
+	overdose_threshold = 0
+	addiction_threshold = 0
+	metabolization_rate = 2 * REAGENTS_METABOLISM
+
+
+/datum/reagent/drug/pathfinding/on_mob_add(mob/M)
+	..()
+	if(isliving(M))
+		var/mob/living/L = M
+		L.add_trait(TRAIT_LEGIONBOIS, id)
+
+
+/datum/reagent/drug/pathfinding/on_mob_delete(mob/M)
+	if(isliving(M))
+		var/mob/living/L = M
+		L.remove_trait(TRAIT_LEGIONBOIS, id)
+	..()
+
+
+/datum/reagent/drug/pathfinding/on_mob_life(mob/living/carbon/M)
+	var/high_message = pick("You feel energetic.", "You feel like you can to go faster.", "You feel the wayfarer looking over you.")
+	if(prob(5))
+		to_chat(M, "<span class='notice'>[high_message]</span>")
+	if(prob(5))
+		M.emote(pick("twitch", "shiver"))
+	..()
+	. = 1
+
+
+
+
+
+
+/datum/reagent/drug/vitality
+	name = "Rite of vitality"
+	id = "vitality"
+	description = "A potent healing mixture made by the Wayfarers"
+	reagent_state = LIQUID
+	color = "#004d4d"
+	metabolization_rate = 0.5 * REAGENTS_METABOLISM
+	overdose_threshold = 20
+
+
+datum/reagent/drug/vitality/on_mob_life(mob/living/M)
+	if(M.getBruteLoss() == 0 && M.getFireLoss() == 0 && M.getToxLoss() == 0 && M.getOxyLoss() == 0)
+		metabolization_rate = 1000 * REAGENTS_METABOLISM //instant metabolise if it won't help you, prevents prehealing before combat
+	if(!M.reagents.has_reagent("healing_poultice") && !M.reagents.has_reagent("stimpak") && !M.reagents.has_reagent("healing_powder") && !M.reagents.has_reagent("super_stim") && !M.reagents.has_reagent("pathfind") && !M.reagents.has_reagent("fortitude")) // We don't want these healing items to stack, so we only apply the healing if these chems aren't found. We only check for the less powerful chems, so the least powerful one always heals.
+		M.adjustBruteLoss(-6*REM)
+		M.adjustFireLoss(-6*REM)
+		M.adjustOxyLoss(-2*REM)
+		M.adjustToxLoss(-2*REM, 0)
+		M.AdjustStun(-10, 0)
+		M.AdjustKnockdown(-10, 0)
+		M.adjustStaminaLoss(-4*REM, 0)
+		. = 1
+	..()
+
+
+/datum/reagent/drug/vitality/overdose_process(mob/living/M)
+	M.adjustToxLoss(10*REM, 0)
+	M.adjustOxyLoss(12*REM, 0)
+	..()
+	. = 1

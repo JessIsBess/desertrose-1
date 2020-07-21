@@ -65,6 +65,30 @@
 	icon_state = "bandaid_healingpoultice"
 	self_delay = 0
 
+/obj/item/reagent_containers/pill/patch/fortitude
+	name = "Rite of Fortitude"
+	desc = "A thick mixture made by the Wayfarer tribe to strengthen themselves against attacks."
+	list_reagents = list("fortitude" = 10)
+	icon_state = "fortitude"
+	self_delay = 0
+
+
+/obj/item/reagent_containers/pill/patch/vitality
+	name = "Rite of Vitality"
+	desc = "A stinking mixture made by the Wayfarer tribe to aid in the healing of their wounds."
+	list_reagents = list("vitality" = 10)
+	icon_state = "vitality"
+	self_delay = 10
+
+
+/obj/item/reagent_containers/pill/patch/pathfinding
+	name = "Rite of Pathfinding"
+	desc = "A light powder made by the Wayfarer tribe to aid in their chases as hunters."
+	list_reagents = list("pathfinding" = 10)
+	icon_state = "pathfind"
+	self_delay = 10
+
+
 /obj/item/reagent_containers/pill/patch/voodoo
     name = "Voodoo"
     desc = "A tribal concoction, made from the left-over byproducts of various critters. It imbues the user with greater agility and a sense of invincibility."

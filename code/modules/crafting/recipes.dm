@@ -14,6 +14,7 @@
 	var/gunsmith_two_req = FALSE
 	var/gunsmith_three_req = FALSE
 	var/gunsmith_four_req = FALSE
+	var/spirit_singer = FALSE
 
 /*
 ---Fallout 13 Crafting
@@ -127,6 +128,17 @@
 	time = 80
 	category = CAT_ASSEM
 	subcategory = CAT_MACHINES
+
+/datum/crafting_recipe/workbench/shrine
+	name = "wayfarer shrine"
+	result = /obj/machinery/workbench/wayfarer
+	reqs = list(/obj/item/stack/sheet/mineral/wood = 10,
+				/obj/item/stack/sheet/cloth = 2,
+				/obj/item/stack/crafting/metalparts = 2)
+	time = 80
+	category = CAT_ASSEM
+	subcategory = CAT_MACHINES
+
 
 /datum/crafting_recipe/barrelfire
 	name = "stoke barrel fire"
@@ -2099,6 +2111,37 @@
     tools = list(TOOL_WORKBENCH)
     category = CAT_PRIMAL
     subcategory = CAT_TRIBAL
+
+/datum/crafting_recipe/fortitude
+	name = "Rite of Fortitude"
+	result = /obj/item/reagent_containers/pill/patch/fortitude
+	time = 45
+	reqs = list(/obj/item/glowing_ghoul_jaw = 1, /obj/item/reagent_containers/food/snacks/grown/agave = 2)
+	tools = list(TOOL_SHRINE, TOOL_SPIRITSINGER)
+	traits = list(TRAIT_SPIRIT_SINGER)
+	category = CAT_MEDICAL
+	subcategory = CAT_MEDS
+
+/datum/crafting_recipe/pathfind
+	name = "Rite of Pathfinding"
+	result = /obj/item/reagent_containers/pill/patch/pathfinding
+	time = 45
+	reqs = list(/obj/item/cazador_wing = 1, /obj/item/reagent_containers/food/snacks/grown/agave = 2, /obj/item/reagent_containers/food/snacks/grown/mutfruit = 2)
+	tools = list(TOOL_SHRINE, TOOL_SPIRITSINGER)
+	traits = list(TRAIT_SPIRIT_SINGER)
+	category = CAT_MEDICAL
+	subcategory = CAT_MEDS
+
+/datum/crafting_recipe/vitality
+	name = "Rite of Vitality"
+	result = /obj/item/reagent_containers/pill/patch/vitality
+	time = 45
+	reqs = list(/obj/item/reagent_containers/food/snacks/meat/slab/deathclaw/heart = 1, /obj/item/reagent_containers/food/snacks/grown/broc = 2, /obj/item/reagent_containers/food/snacks/grown/xander = 2, /obj/item/reagent_containers/food/snacks/grown/agave = 1)
+	tools = list(TOOL_SHRINE, TOOL_SPIRITSINGER)
+	traits = list(TRAIT_SPIRIT_SINGER)
+	category = CAT_MEDICAL
+	subcategory = CAT_MEDS
+
 
 /datum/crafting_recipe/coyotechew
 	name = "Coyote Tobacco Chew"

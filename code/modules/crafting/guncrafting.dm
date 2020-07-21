@@ -98,3 +98,9 @@
 /obj/machinery/ammobench/makeshift/wrench_act(mob/living/user, obj/item/I)
 	default_unfasten_wrench(user, I, 10)
 	return TRUE
+
+/obj/machinery/workbench/wayfarer
+	name = "Wayfarer shrine"
+	icon_state = "shrine"
+	desc = "A small shrine dedicated to the Wayfarer."
+	machine_tool_behaviour = list(TOOL_SHRINE)

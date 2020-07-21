@@ -82,6 +82,7 @@
 #define TRAIT_GUNSMITH_TWO      "gunsmith_two"
 #define TRAIT_GUNSMITH_THREE    "gunsmith_three"
 #define TRAIT_GUNSMITH_FOUR     "gunsmith_four"
+#define TRAIT_SPIRIT_SINGER      "spirit_singer"
 
 // common trait sources
 #define TRAIT_GENERIC "generic"

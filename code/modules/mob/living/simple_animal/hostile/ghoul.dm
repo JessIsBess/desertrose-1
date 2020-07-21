@@ -99,6 +99,10 @@
 	harm_intent_damage = 10
 	melee_damage_lower = 20
 	melee_damage_upper = 20
+	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/human/ghoul = 2,
+							/obj/item/stack/sheet/animalhide/human = 1,
+							/obj/item/stack/sheet/bone = 1,
+							/obj/item/glowing_ghoul_jaw = 1)
 
 /mob/living/simple_animal/hostile/ghoul/legendary
 	name = "legendary ghoul"

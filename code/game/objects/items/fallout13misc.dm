@@ -248,3 +248,32 @@
 	throw_range = 3
 	w_class = WEIGHT_CLASS_BULKY
 	attack_verb = list("bashed")
+
+
+//////////////////////////
+/////////Mob Bits/////////
+/////////////////////////
+
+/obj/item/cazador_wing
+	name = "Cazador wing"
+	desc = "The severed wing from a mutated cazador."
+	icon = 'icons/obj/fallout/crafting.dmi'
+	icon_state = "cazador_wing"
+	throwforce = 0
+	hitsound = null
+	w_class = 1.0
+	throw_speed = 3
+	throw_range = 7
+	attack_verb = list("Flapped")
+
+/obj/item/glowing_ghoul_jaw
+	name = "Glowing one jaw"
+	desc = "The irradiated jawbone of a feral glowing ghoul."
+	icon = 'icons/obj/fallout/crafting.dmi'
+	icon_state = "ghoul_jaw"
+	throwforce = 0
+	hitsound = null
+	w_class = 1.0
+	throw_speed = 3
+	throw_range = 7
+	attack_verb = list("Whipped")

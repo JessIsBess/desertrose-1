@@ -140,6 +140,13 @@
 	icon_state = "goliathmeat"
 	list_reagents = list("nutriment" = 3, "cooking_oil" = 2, "bicaridine" = 10, "kelotane" = 10, "antitoxin" = 10, "tricordrazine" = 10)
 
+/obj/item/reagent_containers/food/snacks/meat/slab/deathclaw/heart
+	name = "Deathclaw heart"
+	desc = "The fresh heart of the wasteland's apex predator."
+	icon = 'icons/obj/fallout/crafting.dmi'
+	icon_state = "deathclaw_heart"
+	list_reagents = list("nutriment" = 3, "cooking_oil" = 2, "bicaridine" = 10, "kelotane" = 10, "antitoxin" = 10, "tricordrazine" = 10)
+
 /obj/item/reagent_containers/food/snacks/meat/slab/radroach_meat
 	name = "radroach meat"
 	desc = "A slab of radroach meat."

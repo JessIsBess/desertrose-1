@@ -18,7 +18,9 @@
 	..()
 	if(visualsOnly)
 		return
-	H.add_trait(TRAIT_TECHNOPHOBE, TRAIT_GENERIC)
+	H.add_trait("TRAIT_TECHNOPHOBE")
+	H.add_trait("TRAIT_GENERIC")
+	H.add_trait("TRAIT_HARD_YARDS")
 
 /*
 Tribal Chief
@@ -38,9 +40,6 @@ Tribal Chief
 
 	outfit = /datum/outfit/job/tribal/f13chief
 
-/datum/job/tribals/f13chief/after_spawn(mob/living/carbon/human/H, mob/M)
-	H.add_quirk("Hard Yards")
-
 /datum/outfit/job/tribal/f13chief
 	name = "Chief"
 	jobtype = /datum/job/tribal/f13chief
@@ -53,7 +52,8 @@ Tribal Chief
 		/obj/item/restraints/legcuffs/bola=1,
 		/obj/item/reagent_containers/pill/patch/healingpowder=2,
 		/obj/item/stack/medical/gauze=1,
-		/obj/item/flashlight/flare/torch=1)
+		/obj/item/flashlight/flare/torch=1,
+		/obj/item/book/granter/trait/spirit_singer=1)
 
 /*
 Tribal Shaman
@@ -73,9 +73,6 @@ Tribal Shaman
 
 	outfit = /datum/outfit/job/tribal/f13shaman
 
-/datum/job/tribals/f13shaman/after_spawn(mob/living/carbon/human/H, mob/M)
-	H.add_quirk("Hard Yards")
-
 /datum/outfit/job/tribal/f13shaman
 	name = "Shaman"
 	jobtype = /datum/job/tribal/f13shaman
@@ -88,7 +85,8 @@ Tribal Shaman
 	backpack_contents = list(
 		/obj/item/reagent_containers/pill/patch/healingpowder=2,
 		/obj/item/stack/medical/gauze=1,
-		/obj/item/flashlight/flare/torch=1)
+		/obj/item/flashlight/flare/torch=1,
+		/obj/item/book/granter/trait/spirit_singer=1)
 /*
 Villager
 */
@@ -110,9 +108,6 @@ Villager
 	/datum/outfit/loadout/huntervillager, //Bow and quiver
 	/datum/outfit/loadout/farmervillager //Warclub farming gear
 	)
-
-/datum/job/tribals/f13villager/after_spawn(mob/living/carbon/human/H, mob/M)
-	H.add_quirk("Hard Yards")
 
 /datum/outfit/job/tribal/f13villager
 	name = "Villager"
